@@ -5,16 +5,24 @@
         <img src="assets/img/site-logo.svg" alt="">
     </div>
     @for (item of menu; track $index) {
-    <div
+    <a [href]="'home/'+item.route"
         class="group w-10 h-10 rounded-full hover:bg-white dark:hover:bg-greyBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative text-black">
-        <i class="text-black dark:text-white" [class]="item.icon"></i>
+        <i class="text-black text-xl dark:text-white" [class]="item.icon"></i>
         <span
-            class="group-hover:flex text-theme hidden absolute right-20 rounded-lg shadow-sm bg-white dark:bg-greyBlack  dark:text-white px-3 py-2">{{item.label}}</span>
-    </div>
+            class="group-hover:flex text-theme hidden absolute rounded-lg shadow-sm bg-white dark:bg-greyBlack  dark:text-white px-3 py-2 right-[120%]">{{item.label}}</span>
+    </a>
     }
     <div
         class="group w-10 h-10 rounded-full hover:bg-white dark:hover:bg-metalBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative mt-8 border border-platinum  dark:border-metalBlack">
-        <i class="bi bi-share"></i>
-        <span class="group-hover:flex hidden absolute right-20 rounded-xl bg-white px-3 py-2 dark:bg-metalBlack dark:text-white">HOME</span>
+        <i class="group-hover:text-theme bi bi-share"></i>
+        <span
+            class="group-hover:flex hover:flex transition-all duration-300 hidden absolute rounded-xl bg-white px-3 py-2 dark:bg-metalBlack dark:text-white right-[105%] shadow-sm">
+            <ul class="flex gap-3">
+                <li class="hover:text-theme transition-all duration-300 "><i class="bi bi-facebook"></i></li>
+                <li class="hover:text-theme transition-all duration-300 "><i class="bi bi-twitter"></i></li>
+                <li class="hover:text-theme transition-all duration-300 "><i class="bi bi-linkedin"></i></li>
+                <li class="hover:text-theme transition-all duration-300 "><i class="bi bi-instagram"></i></li>
+            </ul>
+        </span>
     </div>
 </div>

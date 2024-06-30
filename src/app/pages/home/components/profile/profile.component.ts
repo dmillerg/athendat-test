@@ -14,7 +14,7 @@ import { CHANGETHEME } from '../../../../core/functions/theme.function';
 export class ProfileComponent implements OnInit{
   profile: { label: string, value: string }[] = [
     { label: 'Residence:', value: 'Cuba' },
-    { label: 'City:', value: 'Regla' },
+    { label: 'City:', value: 'Havana' },
     { label: 'Age:', value: '27' },
   ]
 

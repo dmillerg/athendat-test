@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { CardComponent } from '../../../../shared/components/card/card.component';
@@ -12,6 +12,9 @@ import { TestimonialComponent } from '../testimonial/testimonial.component';
 import { ContactComponent } from '../contact/contact.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
+import { ActivatedRoute } from '@angular/router';
+import { scrollTo } from '../../../../core/functions/scroll-to.function';
+import { SkillComponent } from '../skill/skill.component';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +26,7 @@ import { FooterComponent } from '../../../../shared/components/footer/footer.com
     IntroduceComponent,
     AboutMeComponent,
     ServicesComponent,
+    SkillComponent,
     ResumeComponent,
     PortfolioComponent,
     BlogComponent,
@@ -34,6 +38,12 @@ import { FooterComponent } from '../../../../shared/components/footer/footer.com
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
+  activatedRoute = inject(ActivatedRoute);
+
+  ngOnInit(): void {
+    const route = this.activatedRoute.snapshot.params['route'];
+    scrollTo(route)
+  }
 }

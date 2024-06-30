@@ -15,47 +15,47 @@ export class SidebarComponent {
   menu: MenuItem[] = [
     {
       label: 'home',
-      route: 'home',
+      route: 'introduce',
       icon: 'bi bi-house-door'
     },
     {
       label: 'about',
-      route: 'home',
+      route: 'about',
       icon: 'bi bi-person'
     },
     {
       label: 'service',
-      route: 'home',
+      route: 'service',
       icon: 'bi bi-briefcase'
     },
     {
       label: 'skill',
-      route: 'home',
+      route: 'skill',
       icon: 'bi bi-mortarboard'
     },
     {
       label: 'resume',
-      route: 'home',
+      route: 'resume',
       icon: 'bi bi-file-earmark-richtext'
     },
     {
       label: 'poftfolio',
-      route: 'home',
+      route: 'poftfolio',
       icon: 'bi bi-list-task'
     },
     {
       label: 'blog',
-      route: 'home',
+      route: 'blog',
       icon: 'bi bi-substack'
     },
     {
       label: 'testimonial',
-      route: 'home',
+      route: 'testimonial',
       icon: 'bi bi-chat-square-text'
     },
     {
       label: 'contact',
-      route: 'home',
+      route: 'contact',
       icon: 'bi bi-envelope'
     },
   ];
