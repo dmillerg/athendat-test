@@ -24,11 +24,15 @@
         <app-card [title]="'TESTIMONIAL'" [icon]="'bi bi-chat-square-text'">
             <app-testimonial class="card-body"></app-testimonial>
         </app-card>
-        <app-card [title]="'CONTACT'" [icon]="'bi bi-envelope'"  id="contact">
+        <app-card [title]="'CONTACT'" [icon]="'bi bi-envelope'" id="contact">
             <app-contact class="card-body"></app-contact>
         </app-card>
+        <app-footer></app-footer>
     </div>
     <div class="w-fit h-fit sticky top-0 hidden lg:flex xl:flex">
         <app-sidebar />
     </div>
+</div>
+<div class="fixed top-0 flex lg:hidden z-5">
+    <app-header></app-header>
 </div>

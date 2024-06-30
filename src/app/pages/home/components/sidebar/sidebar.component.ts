@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { MenuItem } from '../../../../core/model/menu-item.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCommentAlt, faEnvelope, faFileAlt, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faChrome } from '@fortawesome/free-brands-svg-icons';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

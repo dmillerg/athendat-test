@@ -10,6 +10,8 @@ import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { BlogComponent } from '../blog/blog.component';
 import { TestimonialComponent } from '../testimonial/testimonial.component';
 import { ContactComponent } from '../contact/contact.component';
+import { HeaderComponent } from '../../../../shared/components/header/header.component';
+import { FooterComponent } from '../../../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +27,9 @@ import { ContactComponent } from '../contact/contact.component';
     PortfolioComponent,
     BlogComponent,
     TestimonialComponent,
-    ContactComponent
+    ContactComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

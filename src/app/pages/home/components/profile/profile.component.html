@@ -1,60 +1,66 @@
-<div
-    class="card bg-white dark:bg-nightBlack rounded-3xl h-full w-full max-w-md flex flex-col justify-end items-center gap-2 px-3">
-    <div class="w-full flex flex-col gap-2 px-6 items-center">
-        <div class="w-40 h-40 rounded-full bg-gray-100 p-2 flex justify-center items-center relative">
-            <!-- <img src="" alt="" class="w-full h-full bg-gray-300 rounded-full"> -->
-            <img src="assets/img/user-sidebar-thumb-light.png" class="dark:hidden rounded-full"
-                alt="Daniel Miller González">
-        </div>
-        <h1 class="font-bold text-xl text-center mt-4 dark:text-white" (click)="theme()">Daniel Miller González</h1>
+<div class="flex flex-col w-full  max-w-md ">
+    <div class="bg-white  dark:bg-nightBlack h-12 rounded-t-2xl w-8/12"></div>
+    <div
+        class="card bg-white dark:bg-nightBlack rounded-b-3xl rounded-e-3xl h-full w-full flex flex-col justify-end items-center gap-2 px-3">
+        <div class="w-full flex flex-col gap-2 px-6 items-center">
+            <div
+                class="w-40 h-40 rounded-full bg-gray-100 dark:bg-metalBlack p-2 mt-2 flex justify-center items-center relative">
+                <img src="assets/img/user-sidebar-thumb-light.png" class="dark:hidden rounded-full"
+                    alt="Daniel Miller González">
+                <img src="assets/img/user-sidebar-thumb.png" class="hidden dark:block rounded-full"
+                    alt="Daniel Miller González">
+            </div>
+            <h1 class="font-bold text-xl text-center mt-4 dark:text-white" (click)="theme()">Daniel Miller González</h1>
 
-        <div class="leading-none clip text-center w-fit flex justify-center">
-            <!-- [class]="width?'w-full':'w-5'"  -->
-            <h6 class="animate-preloadedzero2 text-sm h-5 cd-words-wrapper designation text-theme after:!bg-theme *:font-normal transition-all  border-r border-theme"
-                style=" overflow: hidden;">
-                <b class="hidden">Web Developer &nbsp;</b>
-                <b class="visible">Photographers &nbsp;</b>
-                <b class="hidden">Web Designer &nbsp;</b>
-            </h6>
-        </div>
+            <div class="leading-none clip text-center w-fit flex justify-center">
+                <!-- [class]="width?'w-full':'w-5'"  -->
+                <h6 class="animate-preloadedzero2 text-sm h-5 cd-words-wrapper designation text-theme after:!bg-theme *:font-normal transition-all  border-r border-theme"
+                    style=" overflow: hidden;">
+                    <b class="hidden">Web Developer &nbsp;</b>
+                    <b class="visible">Photographers &nbsp;</b>
+                    <b class="hidden">Web Designer &nbsp;</b>
+                </h6>
+            </div>
 
-        <div class="w-full border-b border-platinum dark:border-greyBlack my-2"></div>
+            <div class="w-full border-b border-platinum dark:border-greyBlack my-2"></div>
 
-        <div class="flex flex-col gap-2 w-full">
-            @for (item of profile; track $index) {
-            <div class="flex justify-between">
-                <span class="font-medium">{{item.label}}</span>
-                <span class="font-thin text-colorGray">{{item.value}}</span>
-            </div>
-            }
-        </div>
-    </div>
-    <div class="w-full h-40 my-6 bg-platinum dark:bg-metalBlack rounded-2xl flex flex-col justify-between gap-2 py-4 px-5">
-        <span class="font-normal">Skills</span>
-        <div class="flex gap-2 w-full justify-between text-sm">
-            <div class="flex flex-col justify-center items-center">
-                <span>HTML</span>
-            </div>
-            <div class="flex flex-col justify-center items-center">
-                <span>CSS</span>
-            </div>
-            <div class="flex flex-col justify-center items-center">
-                <span>JS</span>
-            </div>
-            <div class="flex flex-col justify-center items-center">
-                <span>PHP</span>
+            <div class="flex flex-col gap-2 w-full">
+                @for (item of profile; track $index) {
+                <div class="flex justify-between">
+                    <span class="font-medium">{{item.label}}</span>
+                    <span class="font-thin text-colorGray">{{item.value}}</span>
+                </div>
+                }
             </div>
         </div>
-        <button
-            class="rounded-full bg-theme w-full p-3 w-full text-white font-semibold hover:bg-themeHover transition-color duration-300 flex items-center gap-2 justify-center">DOWNLOAD
-            CV <div class="animate-bounce"> <svg width="18" height="18" viewBox="0 0 15 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12.0724 4.92378C12.0726 4.91034 12.0726 4.89691 12.0726 4.88368C12.0726 2.53968 10.1657 0.632812 7.82171 0.632812C5.47771 0.632812 3.57084 2.53968 3.57084 4.88368C3.57084 4.89691 3.57084 4.91055 3.57104 4.92378C1.95417 5.0992 0.691406 6.47267 0.691406 8.13554C0.691406 9.91704 2.14059 11.3662 3.92209 11.3662H4.33138C4.55606 11.3662 4.7384 11.1839 4.7384 10.9592C4.7384 10.7345 4.55606 10.5522 4.33138 10.5522H3.92209C2.58952 10.5522 1.50544 9.46811 1.50544 8.13554C1.50544 6.80297 2.58952 5.71888 3.92209 5.71888H4.00309C4.11868 5.71888 4.22898 5.66963 4.30611 5.58355C4.38345 5.49726 4.42028 5.38248 4.40766 5.2673C4.3924 5.12769 4.38487 5.00233 4.38487 4.88348C4.38487 2.98842 5.92665 1.44664 7.82171 1.44664C9.71678 1.44664 11.2586 2.98842 11.2586 4.88348C11.2586 5.00233 11.251 5.12769 11.2358 5.2673C11.2231 5.38228 11.26 5.49726 11.3373 5.58355C11.4144 5.66963 11.5247 5.71888 11.6403 5.71888H11.7217C13.0541 5.71888 14.138 6.80297 14.138 8.13554C14.138 9.46811 13.0541 10.5522 11.7217 10.5522H11.288C11.0634 10.5522 10.881 10.7345 10.881 10.9592C10.881 11.1839 11.0634 11.3662 11.288 11.3662H11.7217C13.5028 11.3662 14.952 9.91704 14.952 8.13554C14.952 6.47247 13.6892 5.099 12.0724 4.92378Z"
-                        fill="white"></path>
-                    <path
-                        d="M6.26314 11.942C6.0877 12.1876 6.26327 12.5288 6.5651 12.5288H8.81272L7.3764 14.5396C7.25728 14.7064 7.29591 14.9382 7.46268 15.0573C7.62945 15.1764 7.86122 15.1378 7.98034 14.971L9.83579 12.3734C10.0112 12.1278 9.83566 11.7866 9.53382 11.7866H7.2862L8.72252 9.77578C8.84164 9.609 8.80302 9.37724 8.63624 9.25811C8.46947 9.13899 8.23771 9.17762 8.11858 9.34439L6.26314 11.942Z"
-                        fill="white"></path>
-                </svg></div></button>
+        <div
+            class="w-full h-40 my-6 bg-platinum dark:bg-metalBlack rounded-2xl flex flex-col justify-between gap-2 py-4 px-5">
+            <span class="font-normal">Skills</span>
+            <div class="flex gap-2 w-full justify-between text-sm">
+                <div class="flex flex-col justify-center items-center">
+                    <span>HTML</span>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <span>CSS</span>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <span>JS</span>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <span>PHP</span>
+                </div>
+            </div>
+            <button
+                class="rounded-full bg-theme w-full p-3 w-full text-white font-semibold hover:bg-themeHover transition-color duration-300 flex items-center gap-2 justify-center">DOWNLOAD
+                CV <div class="animate-bounce"> <svg width="18" height="18" viewBox="0 0 15 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.0724 4.92378C12.0726 4.91034 12.0726 4.89691 12.0726 4.88368C12.0726 2.53968 10.1657 0.632812 7.82171 0.632812C5.47771 0.632812 3.57084 2.53968 3.57084 4.88368C3.57084 4.89691 3.57084 4.91055 3.57104 4.92378C1.95417 5.0992 0.691406 6.47267 0.691406 8.13554C0.691406 9.91704 2.14059 11.3662 3.92209 11.3662H4.33138C4.55606 11.3662 4.7384 11.1839 4.7384 10.9592C4.7384 10.7345 4.55606 10.5522 4.33138 10.5522H3.92209C2.58952 10.5522 1.50544 9.46811 1.50544 8.13554C1.50544 6.80297 2.58952 5.71888 3.92209 5.71888H4.00309C4.11868 5.71888 4.22898 5.66963 4.30611 5.58355C4.38345 5.49726 4.42028 5.38248 4.40766 5.2673C4.3924 5.12769 4.38487 5.00233 4.38487 4.88348C4.38487 2.98842 5.92665 1.44664 7.82171 1.44664C9.71678 1.44664 11.2586 2.98842 11.2586 4.88348C11.2586 5.00233 11.251 5.12769 11.2358 5.2673C11.2231 5.38228 11.26 5.49726 11.3373 5.58355C11.4144 5.66963 11.5247 5.71888 11.6403 5.71888H11.7217C13.0541 5.71888 14.138 6.80297 14.138 8.13554C14.138 9.46811 13.0541 10.5522 11.7217 10.5522H11.288C11.0634 10.5522 10.881 10.7345 10.881 10.9592C10.881 11.1839 11.0634 11.3662 11.288 11.3662H11.7217C13.5028 11.3662 14.952 9.91704 14.952 8.13554C14.952 6.47247 13.6892 5.099 12.0724 4.92378Z"
+                            fill="white"></path>
+                        <path
+                            d="M6.26314 11.942C6.0877 12.1876 6.26327 12.5288 6.5651 12.5288H8.81272L7.3764 14.5396C7.25728 14.7064 7.29591 14.9382 7.46268 15.0573C7.62945 15.1764 7.86122 15.1378 7.98034 14.971L9.83579 12.3734C10.0112 12.1278 9.83566 11.7866 9.53382 11.7866H7.2862L8.72252 9.77578C8.84164 9.609 8.80302 9.37724 8.63624 9.25811C8.46947 9.13899 8.23771 9.17762 8.11858 9.34439L6.26314 11.942Z"
+                            fill="white"></path>
+                    </svg></div></button>
+        </div>
     </div>
 </div>
