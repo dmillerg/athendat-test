@@ -1,0 +1,55 @@
+<div class="items-center gap-6 hero-content md:flex xl:gap-10 w-full text-greyBlack dark:text-colorGray">
+    <div class="text-content pt-7 lg:pt-8 max-lg:max-w-[30rem]">
+        <h1
+            class="text-[32px] lg:text-5xl xl:text-4xl 2xl:text-5xl font-semibold text-black dark:text-white leading-1.27 lg:leading-1.27 xl:leading-1.27 2xl:leading-1.27 mb-4 lg:mb-5">
+            I Craft The <br>
+            <span class="text-theme">Digital Landscape</span>
+        </h1>
+        <p>
+            I am a <span class="font-semibold text-black dark:text-white/90">Frontend Developer</span> at heart and, i
+            create features that are best suited for the job at hand.
+        </p>
+        <ul class="flex items-center mt-4 -mx-3 lg:mt-5 *:flex *:items-center *:mx-3 *:text-regular">
+            <li>
+                <i class="mr-2 bi bi-check-all text-theme text-xl"></i>
+                Available for work
+            </li>
+            <li>
+                <i class="mr-2 bi bi-check-all text-theme text-xl"></i>
+                Full Time Job
+            </li>
+        </ul>
+        <ul class="mt-7 buttons">
+            <li data-scroll-nav="8" class="">
+                <a href="#contact"
+                    class="btn-theme inline-flex items-center gap-2 bg-theme py-4 md:py-4.5 lg:px-9 px-7 rounded-4xl leading-none transition-all duration-300 hover:shadow-theme_shadow text-white font-medium text-[15px] md:text-base">
+                    <i class="bi bi-send"></i>
+                    HIRE ME
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="hero-image flex-[0_0_20.3rem] max-md:hidden">
+        <img src="assets/img/hero-img-1.png" class="dark:hidden" alt="Hero Image - Light Mode">
+        <img src="assets/img/hero-img-2.png" class="hidden dark:block" alt="Hero Image - Dark Mode">
+    </div>
+</div>
+
+<div class="mb-2 mt-14 xl:mb-0 xl:mt-20">
+    <div class="flex gap-2 items-center">
+        <div class="flex-none">
+            <h6 (click)="next()"
+                class="font-medium text-black dark:text-white/80 text-sm md:max-w-[8rem] border-l border-theme pl-4">
+                Trusted companies
+            </h6>
+        </div>
+        <div class="flex-1 flex gap-20 items-center overflow-hidden animate-carousel" id="carousel-container">
+            @for (item of patners; track $index) {
+            <a href="#" [id]="$index" class="transition duration-200 flex-center flex-none w-26">
+                <img [src]="item" alt="Partner Name">
+            </a>
+            }
+        </div>
+    </div>
+</div>

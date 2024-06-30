@@ -1,0 +1,20 @@
+<div
+    class="card bg-gray-100 dark:bg-power__black rounded-full border border-platinum dark:border-metalBlack h-fit w-fit px-2 py-4 flex flex-col items-center gap-1">
+    <div
+        class="group w-16 h-16 rounded-full hover:bg-white dark:hover:bg-metalBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative mb-8 border border-platinum  dark:border-metalBlack">
+        <img src="assets/img/site-logo.svg" alt="">
+    </div>
+    @for (item of menu; track $index) {
+    <div
+        class="group w-10 h-10 rounded-full hover:bg-white dark:hover:bg-greyBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative text-black">
+        <i class="text-black dark:text-white" [class]="item.icon"></i>
+        <span
+            class="group-hover:flex text-theme hidden absolute right-20 rounded-lg shadow-sm bg-white dark:bg-greyBlack  dark:text-white px-3 py-2">{{item.label}}</span>
+    </div>
+    }
+    <div
+        class="group w-10 h-10 rounded-full hover:bg-white dark:hover:bg-metalBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative mt-8 border border-platinum  dark:border-metalBlack">
+        <i class="bi bi-share"></i>
+        <span class="group-hover:flex hidden absolute right-20 rounded-xl bg-white px-3 py-2 dark:bg-metalBlack dark:text-white">HOME</span>
+    </div>
+</div>
