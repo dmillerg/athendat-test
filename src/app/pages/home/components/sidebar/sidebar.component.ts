@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { MenuItem } from '../../../../core/model/menu-item.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { scrollTo } from '../../../../core/functions/scroll-to.function';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink],
+  imports: [FontAwesomeModule, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+
+  _router = inject(Router);
 
   menu: MenuItem[] = [
     {
@@ -59,4 +63,11 @@ export class SidebarComponent {
       icon: 'bi bi-envelope'
     },
   ];
+
+  activo = model('');
+
+  navigate(route:string){
+    this._router.navigate(['home/'+route]);
+    scrollTo(route)
+  }
 }

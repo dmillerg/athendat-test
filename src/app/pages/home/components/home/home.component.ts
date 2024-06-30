@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { CardComponent } from '../../../../shared/components/card/card.component';
@@ -12,9 +12,10 @@ import { TestimonialComponent } from '../testimonial/testimonial.component';
 import { ContactComponent } from '../contact/contact.component';
 import { HeaderComponent } from '../../../../shared/components/header/header.component';
 import { FooterComponent } from '../../../../shared/components/footer/footer.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { scrollTo } from '../../../../core/functions/scroll-to.function';
 import { SkillComponent } from '../skill/skill.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -33,17 +34,32 @@ import { SkillComponent } from '../skill/skill.component';
     TestimonialComponent,
     ContactComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CommonModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
 
-  activatedRoute = inject(ActivatedRoute);
+  _activatedRoute = inject(ActivatedRoute);
+  _router= inject(Router);
+  activo = signal('');
 
   ngOnInit(): void {
-    const route = this.activatedRoute.snapshot.params['route'];
+    const route = this._activatedRoute.snapshot.params['route'];
     scrollTo(route)
+  }
+
+  onScroll(event: Event) {
+    const cards = document.querySelectorAll('app-card');
+    for (let i = 0; i < cards.length; i++) {
+      const cardRect = cards[i].getBoundingClientRect();
+      if (cardRect.top >= 0 && cardRect.top <= ((event.target as HTMLElement).scrollHeight-10)) {
+        this.activo.set(cards[i].id);
+        this._router.navigate([`home/${cards[i].id}`])
+        break; // Salir del bucle si se encuentra la tarjeta visible
+      }
+    }
   }
 }
