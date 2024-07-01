@@ -1,7 +1,8 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardComponent } from '../../../../shared/components/card/card.component';
 import { home } from '../../../home/components/home/constant/home';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../../../core/services/data.service';
 
 @Component({
   selector: 'app-projects-detail',
@@ -13,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class ProjectsDetailComponent {
 
   home = home;
-  active: boolean = true
+  _dataService = inject(DataService);
 
   technologies: { img: string, name: string, value: number }[] = [
     {
@@ -42,12 +43,4 @@ export class ProjectsDetailComponent {
       value: 80,
     },
   ]
-
-  @HostListener('scroll', ['$event.target']) onScroll() {
-    console.log('da');
-    
-    // const scrollElement = this.elementRef.nativeElement.querySelector('#scrollElement');
-    // Aquí puedes realizar las acciones que necesites cuando se produce el evento de scroll
-    console.log('El elemento con scroll se ha desplazado');
-  }
 }

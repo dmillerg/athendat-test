@@ -1,4 +1,4 @@
-<app-card [icon]="home['poftfolio']" title="Project Details">
+<app-card [icon]="home['poftfolio']" title="Project Details" id="projectDetail">
     <div class="card-body">
         <h2
             class="text-2xl font-semibold leading-normal text-black dark:text-white mt-7 lg:mt-10 article-title lg:text-3xl lg:leading-normal">
@@ -61,8 +61,8 @@
                         </h5>
                         <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
                             <div
-                            [class]="active?'w-['+item.value+'%]':''"
-                                class="progress-content bg-theme h-1.5 rounded-2xl transition-all duration-300">
+                            [class]="_dataService.scroll()==='projectDetail'?'w-['+item.value+'%]':'w-0'"
+                                class="progress-content bg-theme h-1.5 rounded-2xl " style="transition: width ease-in-out 2s ;">
                             </div>
                         </div>
                     </div>

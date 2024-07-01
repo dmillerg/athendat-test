@@ -5,6 +5,7 @@ import { ProfileComponent } from './pages/home/components/profile/profile.compon
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SidebarComponent } from './pages/home/components/sidebar/sidebar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { DataService } from './core/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
   title = 'athendat-test';
   activo = signal('');
   _router = inject(Router);
+  _dataService = inject(DataService);
 
   onScroll(event: Event) {
     const cards = document.querySelectorAll('app-card');
@@ -24,6 +26,7 @@ export class AppComponent {
       const cardRect = cards[i].getBoundingClientRect();
       if (cardRect.top >= 0 && cardRect.top <= ((event.target as HTMLElement).scrollHeight - 10)) {
         this.activo.set(cards[i].id);
+        this._dataService.scroll.set(cards[i].id)
         // this._router.navigate([`home/${cards[i].id}`])
         break; // Salir del bucle si se encuentra la tarjeta visible
       }
