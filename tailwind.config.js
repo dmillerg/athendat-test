@@ -115,10 +115,10 @@ module.exports = {
                         width: '0%'
                     },
                     '50%': {
-                        width: '50%'
+                        width: '200%'
                     },
                     '100%': {
-                        width: '100%'
+                        width: '0%'
                     },
                 }
             },
