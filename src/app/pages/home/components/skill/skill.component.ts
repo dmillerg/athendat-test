@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
+import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
 
 @Component({
   selector: 'app-skill',
   standalone: true,
-  imports: [],
+  imports: [CircularProgressBarComponent],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss'
 })
 export class SkillComponent {
 
-  skill: {img: string, value:number, name:string}[]=[
+  skill: { img: string, value: number, name: string }[] = [
     {
       img: 'assets/img/skill/figma.svg',
       value: 90,
@@ -47,10 +48,10 @@ export class SkillComponent {
     },
   ]
 
-  activeIndex: number=0;
+  activeIndex: number = 0;
 
-  next(){
+  next() {
     console.log();
-    
+
   }
 }

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [FontAwesomeModule, CommonModule, CircularProgressBarComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
@@ -16,7 +17,14 @@ export class ProfileComponent implements OnInit {
     { label: 'Age:', value: '27' },
   ]
 
-  profession: string[] = ['Web Developer ', 'Photographers ', 'Web Designer ']
+  profession: string[] = ['Web Developer ', 'Photographers ', 'Web Designer '];
+
+  language: { name: string, value: number }[] = [
+    { name: 'HTML', value: 90 },
+    { name: 'CSS', value: 80 },
+    { name: 'JS', value: 80 },
+    { name: 'PHP', value: 90 },
+  ]
 
   width: boolean = false;
   active: number = 0;

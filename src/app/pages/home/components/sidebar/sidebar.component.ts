@@ -4,7 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { scrollTo } from '../../../../core/functions/scroll-to.function';
-import { ICONBLOG, ICONSVG } from '../../../../core/constant/icon-blog';
+import { ICONSVG } from '../../../../core/constant/icon-blog';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({

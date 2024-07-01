@@ -8,7 +8,7 @@
         <app-footer></app-footer>
     </div>
     <div class="w-fit h-fit sticky top-0 hidden lg:flex xl:flex">
-        <app-sidebar [activo]="activo()" />
+        <app-sidebar [activo]="_dataService.scroll()" />
     </div>
 </div>
 <div class="fixed top-0 flex lg:hidden z-5">
