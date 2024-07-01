@@ -112,13 +112,13 @@ module.exports = {
                 },
                 carousel: {
                     '0%': {
-                        width: '0%'
+                        width: '-10%'
                     },
                     '50%': {
                         width: '200%'
                     },
                     '100%': {
-                        width: '0%'
+                        width: '-10%'
                     },
                 }
             },
@@ -129,7 +129,7 @@ module.exports = {
                 lineheight: 'lineheight 1s ease-in-out 0s forwards',
                 lineround: 'lineround 1.2s linear 2s infinite',
                 preloadedzero: 'preloadedzero 0.3s ease-in-out 0.5s forwards',
-                preloadedzero2: 'preloadedzero2 1.5s ease-in-out 10s forwards',
+                preloadedzero2: 'preloadedzero2 1.5s ease-in-out 1.5s forwards',
                 carousel: 'carousel 1.2s linear 2s infinite',
             },
             boxShadow: {

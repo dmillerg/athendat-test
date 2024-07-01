@@ -44,12 +44,12 @@
                 Trusted companies
             </h6>
         </div>
-        <div class="flex-1 flex gap-20 items-center overflow-hidden animate-carousel" id="carousel-container">
+        <ul class="flex-1 flex gap-20 items-center overflow-hidden carousel">
             @for (item of patners; track $index) {
-            <a href="#" [id]="$index" class="transition duration-200 flex-center flex-none w-26">
+            <li href="#" [id]="$index" class=" w-26">
                 <img [src]="item" alt="Partner Name">
-            </a>
+            </li>
             }
-        </div>
+        </ul>
     </div>
 </div>

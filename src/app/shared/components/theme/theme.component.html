@@ -1,0 +1,27 @@
+<div [ngClass]="{'translate-x-0':active, 'translate-x-[15rem]':!active}"
+    class="style-switcher fixed right-0 top-1/2 -translate-y-1/2  w-[15rem]  transition z-[9999] active">
+
+    <div (click)="active=!active"
+        class="toggle-btn absolute -left-15 w-15 h-15 bg-white dark:bg-nightBlack text-black dark:text-white flex-center cursor-pointer rounded-[.5rem_0_0_.5rem] select-none shadow-sm shadow-slate-400 flex items-center justify-center">
+        <span class="bi bi-gear animate-spin-slow"></span>
+    </div>
+
+    <div class="theme-select shadow-sm shadow-slate-400 px-6 py-4 bg-white dark:bg-nightBlack rounded-[0_0_0_.5rem]">
+        <h5 class="font-medium mb-2 !text-black dark:!text-white text-lg">Theme Mode</h5>
+
+        <div class="flex items-center justify-between gap-4">
+            <button (click)="changeTheme('dark')" [class]="theme==='dark'? 'bg-flashWhite text-black':'bg-transparent'"
+                class="border w-full px-4 py-4 flex flex-col gap-1 justify-center items-center  rounded-md active"
+                id="dark_theme" title="Active Dark Theme">
+                <i class="bi bi-moon"></i>
+            </button>
+
+            <button (click)="changeTheme('light')"
+                [class]="theme==='light'? 'bg-flashWhite text-black':'bg-transparent'"
+                class="border w-full px-4 py-4 flex flex-col gap-1 justify-center items-center dark:text-white rounded-md"
+                id="light_theme" title="Active Light Theme">
+                <i class="bi bi-sun"></i>
+            </button>
+        </div>
+    </div>
+</div>

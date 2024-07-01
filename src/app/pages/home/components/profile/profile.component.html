@@ -10,15 +10,17 @@
                 <img src="assets/img/user-sidebar-thumb.png" class="hidden dark:block rounded-full"
                     alt="Daniel Miller González">
             </div>
-            <h1 class="font-bold text-xl text-center mt-4 dark:text-white" (click)="theme()">Daniel Miller González</h1>
+            <h1 class="font-bold text-xl text-center mt-4 dark:text-white">Daniel Miller González</h1>
 
             <div class="leading-none clip text-center w-fit flex justify-center">
                 <!-- [class]="width?'w-full':'w-5'"  -->
-                <h6 class="animate-preloadedzero2 text-sm h-5 cd-words-wrapper designation text-theme after:!bg-theme *:font-normal transition-all  border-r border-theme"
+                <h6 [class]="width?'animate-preloadedzero2':''"
+                    class="text-sm h-5 cd-words-wrapper designation text-theme after:!bg-theme *:font-normal transition-all  border-r border-theme"
                     style=" overflow: hidden;">
-                    <b class="hidden">Web Developer &nbsp;</b>
-                    <b class="visible">Photographers &nbsp;</b>
-                    <b class="hidden">Web Designer &nbsp;</b>
+
+                    <b [class]="active===0?'visible':'hidden'">Web Developer</b>
+                    <b [class]="active===1?'visible':'hidden'">Photographers</b>
+                    <b [class]="active===2?'visible':'hidden'">Web Designer</b>
                 </h6>
             </div>
 
