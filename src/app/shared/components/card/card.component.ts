@@ -11,5 +11,5 @@ import { Component, model } from '@angular/core';
 export class CardComponent {
 
   title = model('title');
-  icon = model('icon');
+  icon = model();
 }

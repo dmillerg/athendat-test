@@ -16,6 +16,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { scrollTo } from '../../../../core/functions/scroll-to.function';
 import { SkillComponent } from '../skill/skill.component';
 import { CommonModule } from '@angular/common';
+import { home } from './constant/home';
+import { ICONBLOG } from '../../../../core/constant/icon-blog';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -43,8 +46,12 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent implements OnInit {
 
   _activatedRoute = inject(ActivatedRoute);
-  _router= inject(Router);
+  _router = inject(Router);
   activo = signal('');
+  home = home;
+  iconBlog = this.sanitized.bypassSecurityTrustHtml(ICONBLOG)
+
+  constructor(private sanitized: DomSanitizer) { }
 
   ngOnInit(): void {
     const route = this._activatedRoute.snapshot.params['route'];
@@ -55,7 +62,7 @@ export class HomeComponent implements OnInit {
     const cards = document.querySelectorAll('app-card');
     for (let i = 0; i < cards.length; i++) {
       const cardRect = cards[i].getBoundingClientRect();
-      if (cardRect.top >= 0 && cardRect.top <= ((event.target as HTMLElement).scrollHeight-10)) {
+      if (cardRect.top >= 0 && cardRect.top <= ((event.target as HTMLElement).scrollHeight - 10)) {
         this.activo.set(cards[i].id);
         this._router.navigate([`home/${cards[i].id}`])
         break; // Salir del bucle si se encuentra la tarjeta visible

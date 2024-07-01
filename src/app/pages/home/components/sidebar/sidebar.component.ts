@@ -4,6 +4,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { scrollTo } from '../../../../core/functions/scroll-to.function';
+import { ICONBLOG, ICONSVG } from '../../../../core/constant/icon-blog';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-sidebar',
@@ -50,7 +52,7 @@ export class SidebarComponent {
     {
       label: 'blog',
       route: 'blog',
-      icon: 'bi bi-substack'
+      icon: this.sanitized.bypassSecurityTrustHtml(ICONSVG)
     },
     {
       label: 'testimonial',
@@ -66,8 +68,10 @@ export class SidebarComponent {
 
   activo = model('');
 
-  navigate(route:string){
-    this._router.navigate(['home/'+route]);
+  constructor(private sanitized: DomSanitizer) { }
+
+  navigate(route: string) {
+    this._router.navigate(['home/' + route]);
     scrollTo(route)
   }
 }

@@ -1,42 +1,29 @@
-<div class="fixed w-full h-full grid grid-cols-12 gap-3 py-12 overflow-y-auto " (scroll)="onScroll($event)"
-    style="padding-inline: 3%;">
-    <div class="sticky lg:top-0 xl:top-0 col-span-12 lg:col-span-3 xl:col-span-3 h-fit">
-        <app-profile class="w-full flex justify-center" />
-    </div>
-    <div class="col-span-12 lg:col-span-8 xl:col-span-8">
-        <app-card [title]="'INTRODUCE'" [icon]="'bi bi-house-door'" id="introduce">
-            <app-introduce class="card-body"></app-introduce>
-        </app-card>
-        <app-card [title]="'ABOUT ME'" [icon]="'bi bi-person'" id="about">
-            <app-about-me class="card-body"></app-about-me>
-        </app-card>
-        <app-card [title]="'SERVICES'" [icon]="'bi bi-briefcase'" id="service">
-            <app-services class="card-body"></app-services>
-        </app-card>
-        <app-card [title]="'SKILLS'" [icon]="'bi bi-mortarboard'" id="skill">
-            <app-skill class="card-body"></app-skill>
-        </app-card>
-        <app-card [title]="'RESUME'" [icon]="'bi bi-folder2-open'" id="resume">
-            <app-resume class="card-body"></app-resume>
-        </app-card>
-        <app-card [title]="'PORTFOLIO'" [icon]="'bi bi-list-task'" id="poftfolio">
-            <app-portfolio class="card-body"></app-portfolio>
-        </app-card>
-        <app-card [title]="'BLOG'" [icon]="'bi bi-substack'" id="blog">
-            <app-blog class="card-body"></app-blog>
-        </app-card>
-        <app-card [title]="'TESTIMONIAL'" [icon]="'bi bi-chat-square-text'" id="testimonial">
-            <app-testimonial class="card-body"></app-testimonial>
-        </app-card>
-        <app-card [title]="'CONTACT'" [icon]="'bi bi-envelope'" id="contact">
-            <app-contact class="card-body"></app-contact>
-        </app-card>
-        <app-footer></app-footer>
-    </div>
-    <div class="w-fit h-fit sticky top-0 hidden lg:flex xl:flex">
-        <app-sidebar [activo]="activo()" />
-    </div>
-</div>
-<div class="fixed top-0 flex lg:hidden z-5">
-    <app-header />
+<div>
+    <app-card [title]="'INTRODUCE'" [icon]="home['introduce']" id="introduce">
+        <app-introduce class="card-body"></app-introduce>
+    </app-card>
+    <app-card [title]="'ABOUT ME'" [icon]="home['about']" id="about">
+        <app-about-me class="card-body"></app-about-me>
+    </app-card>
+    <app-card [title]="'SERVICES'" [icon]="home['service']" id="service">
+        <app-services class="card-body"></app-services>
+    </app-card>
+    <app-card [title]="'SKILLS'" [icon]="home['skill']" id="skill">
+        <app-skill class="card-body"></app-skill>
+    </app-card>
+    <app-card [title]="'RESUME'" [icon]="home['resume']" id="resume">
+        <app-resume class="card-body"></app-resume>
+    </app-card>
+    <app-card [title]="'PORTFOLIO'" [icon]="home['poftfolio']" id="poftfolio">
+        <app-portfolio class="card-body"></app-portfolio>
+    </app-card>
+    <app-card [title]="'BLOG'" [icon]="iconBlog" id="blog">
+        <app-blog class="card-body"></app-blog>
+    </app-card>
+    <app-card [title]="'TESTIMONIAL'" [icon]="home['testimonial']" id="testimonial">
+        <app-testimonial class="card-body"></app-testimonial>
+    </app-card>
+    <app-card [title]="'CONTACT'" [icon]="home['contact']" id="contact">
+        <app-contact class="card-body"></app-contact>
+    </app-card>
 </div>

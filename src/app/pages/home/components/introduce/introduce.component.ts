@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { scrollTo } from '../../../../core/functions/scroll-to.function';
 
 @Component({
   selector: 'app-introduce',
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './introduce.component.scss'
 })
 export class IntroduceComponent {
+
+  _router = inject(Router);
 
   patners: string[] = [
     'assets/img/partners/logo4.svg',
@@ -34,4 +38,10 @@ export class IntroduceComponent {
       behavior: 'smooth'
     })
   }
+
+  navigate(route: string) {
+    this._router.navigate([`home/${route}`]);
+    scrollTo(route);
+  }
+
 }

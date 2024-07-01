@@ -1,4 +1,19 @@
-<router-outlet />
+<div class="fixed w-full h-full grid grid-cols-12 gap-3 py-12 overflow-y-auto " (scroll)="onScroll($event)"
+    style="padding-inline: 3%;">
+    <div class="sticky lg:top-0 xl:top-0 col-span-12 lg:col-span-3 xl:col-span-3 h-fit">
+        <app-profile class="w-full flex justify-center" />
+    </div>
+    <div class="col-span-12 lg:col-span-8 xl:col-span-8 pl-2 ">
+        <router-outlet />
+        <app-footer></app-footer>
+    </div>
+    <div class="w-fit h-fit sticky top-0 hidden lg:flex xl:flex">
+        <app-sidebar [activo]="activo()" />
+    </div>
+</div>
+<div class="fixed top-0 flex lg:hidden z-5">
+    <app-header />
+</div>
 <div
     class="bg-lines fixed inset-0 -z-1 md:max-xl:max-w-[45rem] xl:max-w-60rem 2xl:max-w-container mx-auto max-sm:px-8 sm:max-xl:px-12">
     <div
