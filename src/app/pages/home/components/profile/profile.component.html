@@ -37,7 +37,7 @@
                 @for (item of language; track $index) {
                 <div class="flex flex-col relative w-12 h-12 justify-center items-center">
                     <app-circular-progress-bar class="w-11 h-11" [progress]="item.value"></app-circular-progress-bar>
-                    <span class="absolute  text-[13px] -top-3 font-medium label">{{item.value}}%</span>
+                    <span class="absolute  text-[13px] -top-3 font-medium label flex"><app-incremental-number [endValue]="item.value"/>%</span>
                     <p class="text-[13px] font-normal dark:font-light text-black dark:text-white/90">{{item.name}}</p>
                 </div>
                 }

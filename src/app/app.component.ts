@@ -6,12 +6,12 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { SidebarComponent } from './pages/home/components/sidebar/sidebar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { DataService } from './core/services/data.service';
-import { CircularProgressBarComponent } from './shared/components/circular-progress-bar/circular-progress-bar.component';
+import { IncrementalNumberComponent } from './shared/components/incremental-number/incremental-number.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ThemeComponent, ProfileComponent, HeaderComponent, SidebarComponent, FooterComponent, CircularProgressBarComponent],
+  imports: [RouterOutlet, ThemeComponent, ProfileComponent, HeaderComponent, SidebarComponent, FooterComponent, IncrementalNumberComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

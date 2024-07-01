@@ -14,7 +14,7 @@
         <img [src]="item.img" [alt]="item.name" class="dark:grayscale object-contain h-16">
         <app-circular-progress-bar class="w-10/12 h-10/12" [progress]="item.value"></app-circular-progress-bar>
 
-        <span class="absolute top-[150px] h-fit">{{item.value}}%</span>
+        <span class="absolute top-[150px] h-fit flex"><app-incremental-number [endValue]="item.value"/>%</span>
         <span>{{item.name}}</span>
     </div>
     }

@@ -5,7 +5,7 @@
     --radius: calc((var(--size) - var(--stroke-width)) / 2);
     --circumference: calc(var(--radius) * pi * 2);
     --dash: calc((var(--progress) * var(--circumference)) / 100);
-    animation: progress-animation 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: progress-animation 0.3s ;
 }
 
 .circular-progress circle {

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
+import { IncrementalNumberComponent } from '../../../../shared/components/incremental-number/incremental-number.component';
 
 @Component({
   selector: 'app-skill',
   standalone: true,
-  imports: [CircularProgressBarComponent],
+  imports: [CircularProgressBarComponent, IncrementalNumberComponent],
   templateUrl: './skill.component.html',
   styleUrl: './skill.component.scss'
 })

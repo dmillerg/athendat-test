@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
+import { IncrementalNumberComponent } from '../../../../shared/components/incremental-number/incremental-number.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule, CircularProgressBarComponent],
+  imports: [FontAwesomeModule, CommonModule, CircularProgressBarComponent, IncrementalNumberComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })
