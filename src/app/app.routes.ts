@@ -15,5 +15,11 @@ export const routes: Routes = [
         path: 'blogs',
         loadChildren: () =>
             import('./pages/blogs/blogs.routes').then((m) => m.routes),
+    },
+    {
+        path: 'poftfolio',
+        loadChildren: () =>
+            import('./pages/projects/projects.routes').then((m) => m.routes),
     }
+
 ];
