@@ -1,1 +1,0 @@
-import{M as r,Pa as c}from"./chunk-D7QIMH2O.js";var f=(()=>{let t=class t{constructor(){this.scroll=c("")}};t.\u0275fac=function(i){return new(i||t)},t.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"});let o=t;return o})();export{f as a};
