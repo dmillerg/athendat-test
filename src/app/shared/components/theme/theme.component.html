@@ -1,5 +1,5 @@
 <div [class]="active && !open()?'translate-x-0':'translate-x-[15rem]'"
-    class="style-switcher fixed right-0 top-1/2 -translate-y-1/2  w-[15rem]  transition z-[9999] active">
+    class="style-switcher fixed right-0 top-1/2 -translate-y-1/2  w-[15rem]  transition z-999 active">
 
     <div (click)="active=!active;open.set(false)"
         class="toggle-btn absolute -left-15 w-15 h-15 bg-white dark:bg-nightBlack text-black dark:text-white flex-center cursor-pointer rounded-[.5rem_0_0_.5rem] select-none shadow-sm shadow-slate-400 flex items-center justify-center">

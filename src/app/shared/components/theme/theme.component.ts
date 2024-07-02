@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, model } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { CHANGETHEME } from '../../../core/functions/theme.function';
 
 @Component({

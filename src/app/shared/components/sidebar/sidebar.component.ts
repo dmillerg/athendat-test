@@ -17,6 +17,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class SidebarComponent {
 
   _router = inject(Router);
+  _sanitized = inject(DomSanitizer)
+
 
   menu: MenuItem[] = [
     {
@@ -52,7 +54,7 @@ export class SidebarComponent {
     {
       label: 'blog',
       route: 'blog',
-      icon: this.sanitized.bypassSecurityTrustHtml(ICONSVG)
+      icon: this._sanitized.bypassSecurityTrustHtml(ICONSVG)
     },
     {
       label: 'testimonial',
@@ -67,8 +69,6 @@ export class SidebarComponent {
   ];
 
   activo = model('');
-
-  constructor(private sanitized: DomSanitizer) { }
 
   navigate(route: string) {
     this._router.navigate(['home/' + route]);

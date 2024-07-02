@@ -13,9 +13,9 @@ export class LoadingComponent {
 
   show: boolean = true;
 
-  constructor(){
-    setTimeout(()=>{
-this.show = false
+  constructor() {
+    setTimeout(() => {
+      this.show = false;
     }, 3000);
   }
 }

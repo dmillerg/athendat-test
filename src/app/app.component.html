@@ -1,4 +1,4 @@
-<div class="fixed w-full h-full grid grid-cols-12 gap-3 py-12 overflow-y-auto " id="scroll" (scroll)="onScroll($event)"
+<div class="fixed w-full h-full grid grid-cols-12 gap-3 py-12 overflow-y-auto " id="scroll" (scroll)="onScroll()"
     style="padding-inline: 3%;">
     <div class="sticky lg:top-0 xl:top-0 col-span-12 lg:col-span-3 xl:col-span-3 h-fit">
         <app-profile class="w-full flex justify-center" />
@@ -31,5 +31,5 @@
 </button>
 <app-sidebar-sm class="flex lg:hidden xl:hidden 2xl:hidden" [(open)]="open" />
 @if(loading){
-<app-loading class="z-999" />
+<app-loading class="z-[9999]" />
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Testimonial } from '../../models/testimonial.model';
 
 @Component({
   selector: 'app-testimonial',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './testimonial.component.scss'
 })
 export class TestimonialComponent {
-  testimonials: { img: string, rating: number[], text: string, name: string, job: string }[] = [
+  testimonials: Testimonial[] = [
     {
       img: 'assets/img/testimonial/author1.png',
       rating: [1, 2, 3, 4, 5],

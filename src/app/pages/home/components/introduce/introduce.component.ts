@@ -33,12 +33,6 @@ export class IntroduceComponent {
     'assets/img/partners/logo4.svg'
   ]
 
-  next() {
-    document.getElementById('8')?.scrollIntoView({
-      behavior: 'smooth'
-    })
-  }
-
   navigate(route: string) {
     this._router.navigate([`home/${route}`]);
     scrollTo(route);

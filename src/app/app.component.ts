@@ -29,7 +29,7 @@ export class AppComponent {
     setTimeout(() => this.loading = false, 4000)
   }
 
-  onScroll(event: Event) {
+  onScroll() {
     const cards = document.querySelectorAll('app-card');
     for (let i = 0; i < cards.length; i++) {
       const cardRect = cards[i].getBoundingClientRect();

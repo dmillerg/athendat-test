@@ -3,6 +3,7 @@ import { CardComponent } from '../../../../shared/components/card/card.component
 import { home } from '../../../home/components/home/constant/home';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../../../core/services/data.service';
+import { Tecnologies } from '../../models/tecnologies.model';
 
 @Component({
   selector: 'app-projects-detail',
@@ -16,7 +17,7 @@ export class ProjectsDetailComponent {
   home = home;
   _dataService = inject(DataService);
 
-  technologies: { img: string, name: string, value: number }[] = [
+  technologies: Tecnologies[] = [
     {
       img: 'assets/img/skill/html.svg',
       name: 'HTML5',

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Blog } from '../../models/blog.model';
 
 @Component({
   selector: 'app-blog',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class BlogComponent {
 
-  blogs: { img: string, title: string, text: string, href: string }[] = [
+  blogs: Blog[] = [
     {
       img: 'assets/img/blog/article1.png',
       title: `<a href="#" class="transition-colors hover:text-theme">

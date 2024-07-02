@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
 import { IncrementalNumberComponent } from '../../../../shared/components/incremental-number/incremental-number.component';
 import { scaleAnimation } from '../../../../core/animations/show-hide.animation';
+import { Profile } from '../../models/profile.model';
+import { Language } from '../../models/language.model';
 
 @Component({
   selector: 'app-profile',
@@ -13,8 +15,8 @@ import { scaleAnimation } from '../../../../core/animations/show-hide.animation'
   styleUrl: './profile.component.scss',
   animations: [scaleAnimation]
 })
-export class ProfileComponent implements OnInit {
-  profile: { label: string, value: string }[] = [
+export class ProfileComponent implements OnInit, OnDestroy {
+  profile: Profile[] = [
     { label: 'Residence:', value: 'Cuba' },
     { label: 'City:', value: 'Havana' },
     { label: 'Age:', value: '27' },
@@ -22,7 +24,7 @@ export class ProfileComponent implements OnInit {
 
   profession: string[] = ['Web Developer ', 'Photographers ', 'Web Designer '];
 
-  language: { name: string, value: number }[] = [
+  language: Language[] = [
     { name: 'HTML', value: 90 },
     { name: 'CSS', value: 80 },
     { name: 'JS', value: 80 },
@@ -33,10 +35,8 @@ export class ProfileComponent implements OnInit {
   active: number = 0;
   interval: any;
 
-  activeText:string[]=['Web Developer', 'Photographers', 'Web Designer']
-
   ngOnInit(): void {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       let d = this.active;
       this.active = 4
       setTimeout(() => {
@@ -44,5 +44,9 @@ export class ProfileComponent implements OnInit {
         if (this.active > 1) { this.active = 0 } else { this.active += 1 }
       }, 500)
     }, 3000);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 }

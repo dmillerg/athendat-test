@@ -14,9 +14,9 @@
                 González</h6>
             <div class="leading-none w-full flex justify-center">
                 <h6 class="text-sm  flex justify-center h-fit text-theme text-center">
-                    @for (item of activeText; track $index) {
+                    @for (item of profession; track $index) {
                     @if(active===$index){<span [@scaleAnimation]
-                        class="px-1 border-r border-theme whitespace-nowrap">{{activeText[$index]}}</span>}
+                        class="px-1 border-r border-theme whitespace-nowrap">{{profession[$index]}}</span>}
                     }
                 </h6>
             </div>
