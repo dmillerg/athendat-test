@@ -1,6 +1,5 @@
 import { Component, inject, model } from '@angular/core';
 import { MenuItem } from '../../../core/model/menu-item.model';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { scrollTo } from '../../../core/functions/scroll-to.function';
@@ -10,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

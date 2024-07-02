@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
 import { IncrementalNumberComponent } from '../../../../shared/components/incremental-number/incremental-number.component';
 import { scaleAnimation } from '../../../../core/animations/show-hide.animation';
@@ -10,7 +9,7 @@ import { Language } from '../../models/language.model';
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule, CircularProgressBarComponent, IncrementalNumberComponent],
+  imports: [CommonModule, CircularProgressBarComponent, IncrementalNumberComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
   animations: [scaleAnimation]

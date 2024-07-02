@@ -47,7 +47,7 @@ export class AppComponent {
       const cardRect = cards[i].getBoundingClientRect();
       if (cardRect.top < 90 && cardRect.top > 0) {
         this._dataService.scroll.set(cards[i].id)
-        break; // Salir del bucle si se encuentra la tarjeta visible
+        break; 
       }
     }
   }
