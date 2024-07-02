@@ -1,13 +1,14 @@
-<div class="fixed w-full h-full grid grid-cols-12 gap-3 py-12 overflow-y-auto " id="scroll" (scroll)="onScroll()"
-    style="padding-inline: 3%;">
-    <div class="sticky lg:top-0 xl:top-0 col-span-12 lg:col-span-3 xl:col-span-3 h-fit">
+<div class="fixed w-full h-full grid grid-cols-12 gap-3 py-12 justify-items-center overflow-y-auto " id="scroll"
+    (scroll)="onScroll()" style="padding-inline: 3%;">
+    <div class="sticky xl:top-0 2xl:top-0 col-span-12 2xl:col-span-3 xl:col-span-3 h-fit">
         <app-profile class="w-full flex justify-center" />
     </div>
-    <div class="col-span-12 lg:col-span-8 xl:col-span-8 pl-2 ">
+    <div class="col-span-12 2xl:col-span-8 xl:col-span-8 pl-2">
         <router-outlet />
         <app-footer></app-footer>
     </div>
-    <div class="w-fit h-fit sticky top-0 hidden lg:flex xl:flex">
+    <div
+        class="w-fit h-fit sticky top-0 hidden xl:flex 2xl:flex xl:top-1/2 2xl:top-1/2 xl:-translate-y-[50%] 2xl:-translate-y-[50%]">
         <app-sidebar [activo]="_dataService.scroll()" />
     </div>
 </div>
