@@ -12,7 +12,7 @@
     @for (item of skill; track $index) {
     <div class="flex-none w-6/12 md:w-4/12 lg:w-3/12 xl:w-3/12 flex flex-col gap-3 items-center relative" [id]="item.name">
         <img [src]="item.img" [alt]="item.name" class="dark:grayscale object-contain h-16">
-        <app-circular-progress-bar class="w-10/12 h-10/12" [progress]="item.value"></app-circular-progress-bar>
+        <app-circular-progress-bar class="w-10/12 h-10/12" [progress]="item.value" [start]="_dataService.scroll()==='skill'"></app-circular-progress-bar>
 
         <span class="absolute top-[150px] h-fit flex"><app-incremental-number [endValue]="item.value"/>%</span>
         <span>{{item.name}}</span>

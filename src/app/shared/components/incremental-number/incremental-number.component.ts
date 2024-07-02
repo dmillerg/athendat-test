@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, effect, model } from '@angular/core';
 
 @Component({
   selector: 'app-incremental-number',
@@ -12,10 +12,16 @@ export class IncrementalNumberComponent {
   @Input() endValue: number = 100;
   @Input() duration: number = 1000;
 
+  start = model(true);
+
   currentValue: number = 0;
 
-  ngOnInit() {
-    this.animateCounter();
+  constructor() {
+    effect(() => {
+      if (this.start()) {
+        this.animateCounter();
+      }
+    })
   }
 
   animateCounter() {

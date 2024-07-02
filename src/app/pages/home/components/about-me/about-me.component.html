@@ -49,26 +49,26 @@
 
         <ul class="grid grid-cols-2 gap-6 counters md:grid-cols-4 xl:gap-8">
             <li>
-                <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
-                    <span>185</span>+
+                <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl flex">
+                    <span><app-incremental-number [endValue]="185" [start]="_dataService.scroll() ==='about'"/></span>+
                 </div>
                 <div class="text-sm">Years Of Experience</div>
             </li>
             <li>
-                <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
-                    <span>12</span>+
+                <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl flex">
+                    <span><app-incremental-number [endValue]="12" [start]="_dataService.scroll() ==='about'"/></span>+
                 </div>
                 <div class="text-sm">Handled Projects</div>
             </li>
             <li>
-                <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
-                    <span>5</span>+
+                <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl flex">
+                    <span><app-incremental-number [endValue]="5" [start]="_dataService.scroll() ==='about'"/></span>+
                 </div>
                 <div class="text-sm">Open Source Libraries</div>
             </li>
             <li>
                 <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
-                    <span>18</span>
+                    <span><app-incremental-number [endValue]="18" [start]="_dataService.scroll() ==='about'"/></span>
                 </div>
                 <div class="text-sm">Awards Won</div>
             </li>

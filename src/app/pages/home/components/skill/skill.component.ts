@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
 import { IncrementalNumberComponent } from '../../../../shared/components/incremental-number/incremental-number.component';
+import { DataService } from '../../../../core/services/data.service';
 
 @Component({
   selector: 'app-skill',
@@ -50,6 +51,7 @@ export class SkillComponent {
   ]
 
   activeIndex: number = 0;
+  _dataService = inject(DataService);
 
   next() {
     console.log();

@@ -10,4 +10,5 @@ import { Component, model } from '@angular/core';
 export class CircularProgressBarComponent {
   progress = model();
   strokeWidth = model('15px');
+  start = model(true);
 }
