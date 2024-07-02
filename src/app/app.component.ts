@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ThemeComponent } from './shared/components/theme/theme.component';
 import { ProfileComponent } from './pages/home/components/profile/profile.component';
@@ -23,26 +23,28 @@ export class AppComponent {
   open: boolean = false;
   loading: boolean = true;
 
-  constructor(){
-    setTimeout(()=>this.loading = false, 4000)
+  @ViewChild('scroll') scroll!: ElementRef
+
+  constructor() {
+    setTimeout(() => this.loading = false, 4000)
   }
 
   onScroll(event: Event) {
     const cards = document.querySelectorAll('app-card');
     for (let i = 0; i < cards.length; i++) {
       const cardRect = cards[i].getBoundingClientRect();
-      console.log('---------------------------------');
-
-      // console.log('card top ',cardRect.top);
-      // console.log('card bottom ',cardRect.bottom);
-      // console.log('height ',(event.target as HTMLElement).scrollHeight - 10);
-
-
       if (cardRect.top < 90 && cardRect.top > 0) {
         this._dataService.scroll.set(cards[i].id)
-        // this._router.navigate([`home/${cards[i].id}`])
         break; // Salir del bucle si se encuentra la tarjeta visible
       }
     }
+  }
+
+  scrollToTop() {
+    const scroll = document.getElementById('scroll')
+    scroll?.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }
 }
