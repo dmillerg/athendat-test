@@ -3,6 +3,9 @@ import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
     {
+        path: '', redirectTo: 'introduce', pathMatch: 'full'
+    },
+    {
         path: ':route',
         component: HomeComponent
     },

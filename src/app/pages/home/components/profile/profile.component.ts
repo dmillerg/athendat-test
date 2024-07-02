@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CircularProgressBarComponent } from '../../../../shared/components/circular-progress-bar/circular-progress-bar.component';
 import { IncrementalNumberComponent } from '../../../../shared/components/incremental-number/incremental-number.component';
+import { scaleAnimation } from '../../../../core/animations/show-hide.animation';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
   imports: [FontAwesomeModule, CommonModule, CircularProgressBarComponent, IncrementalNumberComponent],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  styleUrl: './profile.component.scss',
+  animations: [scaleAnimation]
 })
 export class ProfileComponent implements OnInit {
   profile: { label: string, value: string }[] = [
@@ -31,14 +33,16 @@ export class ProfileComponent implements OnInit {
   active: number = 0;
   interval: any;
 
+  activeText:string[]=['Web Developer', 'Photographers', 'Web Designer']
+
   ngOnInit(): void {
     setInterval(() => {
-      this.width = !this.width;
-      if (this.width) {
-        setTimeout(() => {
-          if (this.active > 1) { this.active = 0 } else { this.active += 1 }
-        }, 10500)
-      }
+      let d = this.active;
+      this.active = 4
+      setTimeout(() => {
+        this.active = d;
+        if (this.active > 1) { this.active = 0 } else { this.active += 1 }
+      }, 500)
     }, 3000);
   }
 }

@@ -10,13 +10,14 @@
                 <img src="assets/img/user-sidebar-thumb-light.png" class="dark:hidden" alt="Brown Reddick">
                 <!--Image for Light Version -->
             </a>
-            <h6 class="mb-1 text-lg font-semibold text-black dark:text-white name">Daniel Miller González</h6>
-            <div class="leading-none cd-headline clip is-full-width">
-                <h6 class="text-sm cd-words-wrapper designation text-theme after:!bg-theme *:font-normal"
-                    style="width: 72.4152px; overflow: hidden;">
-                    <b class="is-hidden">Web Developer</b>
-                    <b class="is-visible">Photographers</b>
-                    <b class="is-hidden">Web Designer</b>
+            <h6 class="mb-1 text-lg font-semibold text-black dark:text-white name">Daniel Miller
+                González</h6>
+            <div class="leading-none w-full flex justify-center">
+                <h6 class="text-sm  flex justify-center h-fit text-theme text-center">
+                    @for (item of activeText; track $index) {
+                    @if(active===$index){<span [@scaleAnimation]
+                        class="px-1 border-r border-theme whitespace-nowrap">{{activeText[$index]}}</span>}
+                    }
                 </h6>
             </div>
         </div>
@@ -37,7 +38,8 @@
                 @for (item of language; track $index) {
                 <div class="flex flex-col relative w-12 h-12 justify-center items-center">
                     <app-circular-progress-bar class="w-11 h-11" [progress]="item.value"></app-circular-progress-bar>
-                    <span class="absolute  text-[13px] -top-3 font-medium label flex"><app-incremental-number [endValue]="item.value"/>%</span>
+                    <span class="absolute  text-[13px] -top-3 font-medium label flex"><app-incremental-number
+                            [endValue]="item.value" />%</span>
                     <p class="text-[13px] font-normal dark:font-light text-black dark:text-white/90">{{item.name}}</p>
                 </div>
                 }
@@ -68,5 +70,4 @@
             </clipPath>
         </svg>
     </div>
-
 </div>
