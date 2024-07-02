@@ -1,0 +1,13 @@
+<div class="fixed w-full h-full flex overflow-x-hidden">
+    <div [class]="show?'translate-x-0':'-translate-x-[100%]'" class="w-6/12 transition-all duration-500 bg-flashWhite dark:bg-nightBlack"></div>
+    @if(show){
+    <div class="flex items-center justify-center h-full z-999">
+        <div [@loading] class="absolute w-[0.5px] h-full bg-nightBlack dark:bg-colorGray"></div>
+        <a href="home/introduce"
+            class="absolute w-20 h-20 rounded-full bg-nightBlack dark:bg-metalBlack flex items-center justify-center">
+            <img src="assets/img/site-logo.svg" alt="">
+        </a>
+    </div>
+    }
+    <div [class]="show?'translate-x-0':'translate-x-[100%]'" class="w-6/12 transition-all duration-500 bg-flashWhite dark:bg-nightBlack"></div>
+</div>

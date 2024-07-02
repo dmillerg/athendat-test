@@ -7,21 +7,25 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { DataService } from './core/services/data.service';
 import { SidebarSmComponent } from './shared/components/sidebar-sm/sidebar-sm.component';
-import { scaleAnimation } from './core/animations/show-hide.animation';
+import { LoadingComponent } from './shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ThemeComponent, ProfileComponent, HeaderComponent, SidebarComponent, FooterComponent, SidebarSmComponent],
+  imports: [RouterOutlet, ThemeComponent, ProfileComponent, HeaderComponent, SidebarComponent, FooterComponent, SidebarSmComponent, LoadingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [scaleAnimation]
 })
 export class AppComponent {
   title = 'athendat-test';
   _router = inject(Router);
   _dataService = inject(DataService);
   open: boolean = false;
+  loading: boolean = true;
+
+  constructor(){
+    setTimeout(()=>this.loading = false, 4000)
+  }
 
   onScroll(event: Event) {
     const cards = document.querySelectorAll('app-card');

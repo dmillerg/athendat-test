@@ -3,7 +3,7 @@
     <a href="home/introduce"
         class="group w-16 h-16 rounded-full hover:bg-white dark:hover:bg-metalBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative mb-8 border border-platinum  dark:border-metalBlack">
         <img src="assets/img/site-logo.svg" alt="">
-</a>
+    </a>
     @for (item of menu; track $index) {
     <a (click)="navigate(item.route)"
         [class]="activo()===item.route?'bg-white text-theme dark:bg-greyBlack':'text-black dark:text-white'"

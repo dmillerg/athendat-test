@@ -26,3 +26,6 @@
 </div>
 <app-theme [(open)]="open"></app-theme>
 <app-sidebar-sm class="flex lg:hidden xl:hidden 2xl:hidden" [(open)]="open" />
+@if(loading){
+<app-loading class="z-999"/>
+}
