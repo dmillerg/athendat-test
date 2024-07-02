@@ -1,1 +1,0 @@
-import{M as r,Na as c}from"./chunk-OK2VTO2I.js";var f=(()=>{let t=class t{constructor(){this.scroll=c("")}};t.\u0275fac=function(i){return new(i||t)},t.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"});let o=t;return o})();export{f as a};
