@@ -1,17 +1,17 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ThemeComponent } from './shared/components/theme/theme.component';
 import { ProfileComponent } from './pages/home/components/profile/profile.component';
 import { HeaderComponent } from './shared/components/header/header.component';
-import { SidebarComponent } from './pages/home/components/sidebar/sidebar.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { DataService } from './core/services/data.service';
-import { IncrementalNumberComponent } from './shared/components/incremental-number/incremental-number.component';
+import { SidebarSmComponent } from './shared/components/sidebar-sm/sidebar-sm.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ThemeComponent, ProfileComponent, HeaderComponent, SidebarComponent, FooterComponent, IncrementalNumberComponent],
+  imports: [RouterOutlet, ThemeComponent, ProfileComponent, HeaderComponent, SidebarComponent, FooterComponent, SidebarSmComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,6 +19,7 @@ export class AppComponent {
   title = 'athendat-test';
   _router = inject(Router);
   _dataService = inject(DataService);
+  open: boolean= false;
 
   onScroll(event: Event) {
     const cards = document.querySelectorAll('app-card');
@@ -31,7 +32,7 @@ export class AppComponent {
       // console.log('height ',(event.target as HTMLElement).scrollHeight - 10);
 
 
-      if (cardRect.top < 76 && cardRect.top > 0) {
+      if (cardRect.top < 90 && cardRect.top > 0) {
         this._dataService.scroll.set(cards[i].id)
         // this._router.navigate([`home/${cards[i].id}`])
         break; // Salir del bucle si se encuentra la tarjeta visible

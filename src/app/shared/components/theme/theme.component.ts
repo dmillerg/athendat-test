@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, model } from '@angular/core';
 import { CHANGETHEME } from '../../../core/functions/theme.function';
 
 @Component({
@@ -11,8 +11,10 @@ import { CHANGETHEME } from '../../../core/functions/theme.function';
 })
 export class ThemeComponent {
   active: boolean = false;
+  open = model(false);
 
-  theme: string = localStorage.getItem('theme') ?? 'light'
+  theme: string = localStorage.getItem('theme') ?? 'light';
+
   constructor() {
     this.changeTheme();
   }

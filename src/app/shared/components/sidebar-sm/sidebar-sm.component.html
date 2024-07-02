@@ -1,0 +1,55 @@
+<div class="fixed w-full h-full bg-black/60 transition-all duration-1000" [class]="open()?'fixed':'hidden'">
+
+</div>
+
+<div [class]="open()===false?'translate-x-96':'translate-x-0'"
+    class="absolute overflow-y-auto transition-all duration-500 right-0 w-fit h-full  bg-flashWhite dark:bg-nightBlack z-999 flex flex-col py-12 pl-8 pr-12">
+    <div class="mb-6 text-lg font-medium text-black dark:text-white menu-title">
+        Menu
+    </div>
+    <button (click)="open.set(false)"
+        class="absolute flex items-center justify-center w-9 h-9 text-sm text-white rounded-full close-menu top-4 right-4 bg-colorGray dark:bg-greyBlack is-menu-open"
+        aria-label="Close Menu">
+        <i class="font-bold bi bi-x-lg"></i>
+    </button>
+    <ul class="space-y-5 font-normal main-menu">
+        @for (item of menu; track $index) {
+        <li data-scroll-nav="0" class="relative group">
+            <a (click)="navigate(item.route)" class="flex items-center space-x-2 group cursor-pointer">
+                <span class="w-5 text-black dark:text-white group-[&amp;.active]:text-theme">
+                    @if(item.label==='blog'){
+                    <div [innerHTML]="item.icon" class="w-4 h-4 flex"
+                        [class]="_dataService.scroll()===item.route?'text-theme':'text-colorSilver'"></div>
+                    }@else{
+                    <i
+                        [class]="(_dataService.scroll()===item.route?'text-theme':'text-colorSilver')+' '+item.icon"></i>}
+                </span>
+                <span [class]="_dataService.scroll()===item.route?'text-theme dark:text-white':''"
+                    class="group-hover:text-theme text-colorSilver transition-colors">
+                    {{item.label}}
+                </span>
+            </a>
+        </li>
+        }
+    </ul>
+
+    <br><br>
+    <div class="mb-4 font-medium text-black dark:text-white menu-title text-md">
+        Get in Touch
+    </div>
+    <!-- Social Share Icon Start  -->
+    <div class="flex items-center space-x-4 social-icons *:flex text-colorSilver">
+        <a href="#" title="Share with Facebook">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a href="#" title="Share with Linkedin">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="#" title="Share with X">
+            <i class="bi bi-twitter"></i>
+        </a>
+        <a href="#" title="Share with X">
+            <i class="bi bi-instagram"></i>
+        </a>
+    </div>
+</div>

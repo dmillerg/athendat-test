@@ -1,22 +1,25 @@
 import { Component, inject, model } from '@angular/core';
-import { MenuItem } from '../../../../core/model/menu-item.model';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { scrollTo } from '../../../../core/functions/scroll-to.function';
-import { ICONSVG } from '../../../../core/constant/icon-blog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ICONSVG } from '../../../core/constant/icon-blog';
+import { MenuItem } from '../../../core/model/menu-item.model';
+import { DataService } from '../../../core/services/data.service';
+import { Router } from '@angular/router';
+import { scrollTo } from '../../../core/functions/scroll-to.function';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-sidebar-sm',
   standalone: true,
-  imports: [FontAwesomeModule, CommonModule],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  imports: [],
+  templateUrl: './sidebar-sm.component.html',
+  styleUrl: './sidebar-sm.component.scss'
 })
-export class SidebarComponent {
+export class SidebarSmComponent {
 
+  _dataService = inject(DataService);
+  _sanitized = inject(DomSanitizer);
   _router = inject(Router);
+
+  open = model(false);
 
   menu: MenuItem[] = [
     {
@@ -52,7 +55,7 @@ export class SidebarComponent {
     {
       label: 'blog',
       route: 'blog',
-      icon: this.sanitized.bypassSecurityTrustHtml(ICONSVG)
+      icon: this._sanitized.bypassSecurityTrustHtml(ICONSVG)
     },
     {
       label: 'testimonial',
@@ -65,10 +68,6 @@ export class SidebarComponent {
       icon: 'bi bi-envelope'
     },
   ];
-
-  activo = model('');
-
-  constructor(private sanitized: DomSanitizer) { }
 
   navigate(route: string) {
     this._router.navigate(['home/' + route]);
