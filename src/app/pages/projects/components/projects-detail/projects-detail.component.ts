@@ -44,4 +44,8 @@ export class ProjectsDetailComponent {
       value: 80,
     },
   ]
+
+  concat(value: number): string {
+    return `w-[${value}%]`;
+  }
 }

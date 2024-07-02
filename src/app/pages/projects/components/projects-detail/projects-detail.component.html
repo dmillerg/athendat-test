@@ -60,9 +60,9 @@
                             <span class="progress-title">{{item.name}}</span>
                         </h5>
                         <div class="progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl">
-                            <div
-                            [class]="_dataService.scroll()==='projectDetail'?'w-['+item.value+'%]':'w-0'"
-                                class="progress-content bg-theme h-1.5 rounded-2xl " style="transition: width ease-in-out 2s ;">
+                            <div [class]="_dataService.scroll()==='projectDetail'?concat(item.value):'w-0'"
+                                class="progress-content bg-theme h-1.5 rounded-2xl "
+                                style="transition: all ease-in-out 5s ;">
                             </div>
                         </div>
                     </div>

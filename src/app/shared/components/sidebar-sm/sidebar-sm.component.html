@@ -1,4 +1,5 @@
-<div (click)="open.set(false)" class="fixed w-full h-full bg-black/60 transition-all duration-1000" [class]="open()?'fixed':'hidden'">
+<div (click)="open.set(false)" class="fixed w-full h-full bg-black/60 transition-all duration-1000"
+    [class]="open()?'fixed':'hidden'">
 
 </div>
 
@@ -19,12 +20,14 @@
                 <span class="w-5 text-black dark:text-white group-[&amp;.active]:text-theme">
                     @if(item.label==='blog'){
                     <div [innerHTML]="item.icon" class="w-4 h-4 flex"
-                        [class]="_dataService.scroll()===item.route?'text-theme':'text-colorSilver'"></div>
+                        [class]="_dataService.scroll()===item.route && url.includes(item.route)?'text-theme':'text-colorSilver'">
+                    </div>
                     }@else{
                     <i
-                        [class]="(_dataService.scroll()===item.route?'text-theme':'text-colorSilver')+' '+item.icon"></i>}
+                        [class]="(_dataService.scroll()===item.route && url.includes(item.route)?'text-theme':'text-colorSilver')+' '+item.icon"></i>}
                 </span>
-                <span [class]="_dataService.scroll()===item.route?'text-theme dark:text-white':''"
+                <span
+                    [class]="_dataService.scroll()===item.route && url.includes(item.route)?'text-theme dark:text-white':''"
                     class="group-hover:text-theme text-colorSilver transition-colors">
                     {{item.label}}
                 </span>

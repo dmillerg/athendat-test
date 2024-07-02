@@ -6,7 +6,7 @@
     </a>
     @for (item of menu; track $index) {
     <a (click)="navigate(item.route)"
-        [class]="activo()===item.route?'bg-white text-theme dark:bg-greyBlack':'text-black dark:text-white'"
+        [class]="activo()===item.route || url.includes(item.route) ?'bg-white text-theme dark:bg-greyBlack':'text-black dark:text-white'"
         class="group w-10 h-10 rounded-full hover:bg-white dark:hover:bg-greyBlack cursor-pointer flex justify-center items-center transition-color duration-300 relative text-black">
         @if(item.label==='blog'){
         <div [innerHTML]="item.icon" class="w-4 h-4 flex group-hover:text-theme"></div>

@@ -1,10 +1,11 @@
-import { Component, inject, model } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject, model } from '@angular/core';
 import { MenuItem } from '../../../core/model/menu-item.model';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { scrollTo } from '../../../core/functions/scroll-to.function';
 import { ICONSVG } from '../../../core/constant/icon-blog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription, filter } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,7 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit , OnDestroy{
 
   _router = inject(Router);
   _sanitized = inject(DomSanitizer)
@@ -68,6 +69,25 @@ export class SidebarComponent {
   ];
 
   activo = model('');
+  routeSubscription = new Subscription();
+  url: string[] = [];
+
+  ngOnInit(): void {
+    this.getRoute();
+  }
+
+  ngOnDestroy(): void {
+    this.routeSubscription.unsubscribe();
+  }
+
+  getRoute() {
+    this.url = this._router.url.split('/')
+    this.routeSubscription = this._router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.url = event['url'].split('/')
+    });
+  }
 
   navigate(route: string) {
     this._router.navigate(['home/' + route]);
