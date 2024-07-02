@@ -31,7 +31,7 @@ export class ContactComponent {
         "&body=" +
         encodeURIComponent(data.message!);
       window.open(mailtoLink);
-      this._router.navigate(['contact-form']);
+      this._router.navigate(['contact']);
     } else {
       this.form.markAllAsTouched()
     }

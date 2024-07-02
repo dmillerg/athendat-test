@@ -23,7 +23,7 @@ export const routes: Routes = [
             import('./pages/projects/projects.routes').then((m) => m.routes),
     },
     {
-        path: 'contact-form',
+        path: 'contact',
         component: ContactComponent
     }
 
