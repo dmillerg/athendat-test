@@ -8,7 +8,7 @@ export const routes: Routes = [
         component: BlogsComponent
     },
     {
-        path: 'article-details',
+        path: 'details',
         component: BlogDetailComponent
     },
 ];

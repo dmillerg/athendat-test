@@ -22,7 +22,7 @@ export class BlogsComponent {
                                 03 May 2023
                             </span>`,
       text: 'Elevate your mornings with perfectly brewed coffee',
-      href: 'blogs/article-details',
+      href: 'blogs/details',
     },
     {
       img: 'assets/img/blog/article2.png',
@@ -33,7 +33,7 @@ export class BlogsComponent {
                                 03 May 2023
                             </span>`,
       text: 'Mastering the clock: A guide to time management',
-      href: 'blogs/article-details',
+      href: 'blogs/details',
     },
     {
       img: 'assets/img/blog/article3.png',
@@ -44,7 +44,7 @@ export class BlogsComponent {
                                 03 May 2023
                             </span>`,
       text: 'Homeward bound: Crafting a productive home office',
-      href: 'blogs/article-details',
+      href: 'blogs/details',
     },
     {
       img: 'assets/img/blog/article4.png',
@@ -55,7 +55,7 @@ export class BlogsComponent {
                                 03 May 2023
                             </span>`,
       text: 'Design Specialization brings a user design-centric.',
-      href: 'blogs/article-details',
+      href: 'blogs/details',
     },
     {
       img: 'assets/img/blog/article5.png',
@@ -66,7 +66,7 @@ export class BlogsComponent {
                                 03 May 2023
                             </span>`,
       text: 'Design Specialization brings a user design-centric.',
-      href: 'blogs/article-details',
+      href: 'blogs/details',
     },
     {
       img: 'assets/img/blog/article6.png',
@@ -77,7 +77,7 @@ export class BlogsComponent {
                                 03 May 2023
                             </span>`,
       text: 'Design Specialization brings a user design-centric.',
-      href: 'blogs/article-details',
+      href: 'blogs/details',
     }
   ]
   icon = this.sanitized.bypassSecurityTrustHtml(ICONBLOG)
