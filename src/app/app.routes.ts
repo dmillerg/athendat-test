@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,10 @@ export const routes: Routes = [
         path: 'poftfolio',
         loadChildren: () =>
             import('./pages/projects/projects.routes').then((m) => m.routes),
+    },
+    {
+        path: 'contact-form',
+        component: ContactComponent
     }
 
 ];
