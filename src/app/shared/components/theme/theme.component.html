@@ -1,4 +1,4 @@
-<div [ngClass]="{'translate-x-0':active, 'translate-x-[15rem]':!active}"
+<div [class]="active && !open()?'translate-x-0':'translate-x-[15rem]'"
     class="style-switcher fixed right-0 top-1/2 -translate-y-1/2  w-[15rem]  transition z-[9999] active">
 
     <div (click)="active=!active;open.set(false)"
